@@ -3,9 +3,13 @@ const app = express();
 const PORT = process.env.PORT || 3000; 
 
 app.get("/", (req, res) => {
-    res.send("Welcome to shepeasy");
-})
+    res.set('Cache-Control', 'no-store'); 
+    res.status(200).send("Welcome to shepeasy");
+});
 
-app.listen(PORT, () => {
-    console.log('Server is running in port ',{PORT});
-})
+const server = app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+
+module.exports = { app, server };
