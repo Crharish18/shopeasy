@@ -8,3 +8,6 @@ describe("GET /", () => {
     expect(response.text).toBe("Welcome to shepeasy");
   });
 });
+afterAll(()=>{
+    server.close;
+})
