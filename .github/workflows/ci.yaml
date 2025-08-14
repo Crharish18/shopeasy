@@ -15,7 +15,7 @@ jobs:
         - name: Setup nnode.js
           uses: actions/setup-node@v3
 
-        - name: Install deppendecies
+        - name: Install dependencies
           run: npm Install
 
         - name: run test
